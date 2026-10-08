@@ -99,7 +99,14 @@ func (s *script) getConfiguredAgeRecipients() ([]age.Recipient, error) {
 func parseAgeRecipient(arg string) (age.Recipient, error) {
 	// This logic is adapted from what the age CLI is doing
 	// stripping some special cases
+	// https://github.com/C2SP/C2SP/blob/main/age.md
+	// This implements hybrid (pq), native (x25519) and ssh
+	// (ed25519) types for now
+	// Adding other types would require tag and plugins, see
+	// https://github.com/FiloSottile/age/blob/main/cmd/age/parse.go
 	switch {
+	case strings.HasPrefix(arg, "age1pq1"):
+		return age.ParseHybridRecipient(arg)
 	case strings.HasPrefix(arg, "age1"):
 		return age.ParseX25519Recipient(arg)
 	case strings.HasPrefix(arg, "ssh-"):

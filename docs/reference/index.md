@@ -144,7 +144,7 @@ If you need to confirm what the container actually loaded, see [Show loaded conf
 # Available backends are: S3, WebDAV, SSH, Local, Dropbox, Azure
 # E.g. with one backend excluded: BACKUP_SKIP_BACKENDS_FROM_PRUNE=s3
 # E.g. with multiple backends excluded: BACKUP_SKIP_BACKENDS_FROM_PRUNE=s3,webdav
-# Note: The names of the backends are case insensitive. 
+# Note: The names of the backends are case insensitive.
 # Default: All backends get pruned.
 
 # BACKUP_SKIP_BACKENDS_FROM_PRUNE=""
@@ -432,7 +432,7 @@ If you need to confirm what the container actually loaded, see [Show loaded conf
 
 # The ID of the Google Drive folder where backups will be uploaded.
 # You can find the folder ID in the URL when viewing the folder in Google Drive.
-# 
+#
 # Example: "1A2B3C4D5E6F7G8H9I0J"
 #
 # GOOGLE_DRIVE_FOLDER_ID=""
@@ -545,7 +545,7 @@ If you need to confirm what the container actually loaded, see [Show loaded conf
 
 # Backups can be encrypted asymmetrically using age in case publickeys are given.
 # Multiple keys need to be provided as a comma separated list. Right now, this
-# supports `age` and `ssh` keys
+# supports `age`, `age1pq1` and `ssh` keys
 
 # AGE_PUBLIC_KEYS=""
 
